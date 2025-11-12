@@ -1,0 +1,13 @@
+deployment:
+  tasks:
+    # Set deployment path to your public_html folder
+    - export DEPLOYPATH=/home/kpicontr/public_html/
+
+    # Remove old files (optional but recommended for clean deploy)
+    - /bin/rm -rf $DEPLOYPATH/*
+
+    # Copy all files from the repo to the deployment path
+    - /bin/cp -R * $DEPLOYPATH
+
+    # Optional: If you have hidden files like .htaccess
+    - /bin/cp -R .htaccess $DEPLOYPATH
